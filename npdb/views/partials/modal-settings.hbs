@@ -1,0 +1,41 @@
+<div class="modal-wrapper modal-settings" id="modal-settings">
+  <div class="modal-content">
+    <h4>Общие настройки</h4>
+    <form>
+      <div class="form-item themes">
+        <input type="checkbox" id="themer1" value="">
+        <label for="themer1">Тёмная тема</label>
+      </div>
+      <div class="form-item min-width">
+        <label for="themer1">Минимальная ширина</label>
+        <input type="number" name="minWidth" id="minwidth1" value="">
+      </div>
+      <div class="form-item bg">
+        <h6>Выбрать фон</h6>
+        <input type="file" name="bg-change" id="bg1" value="">
+        <label for="bg1">Локальный файл..</label>
+        <button type="button" name="bg-remove">Удалить фон</button>
+      </div>
+      <div class="form-group config-import">
+        <h6>Импорт конфигурации</h6>
+        <input type="file" name="config-import-file" id="config-import-file" value="">
+        <label for="config-import-file">Импорт из локального файла</label>
+        <button type="button" name="config-import-server">Импорт с сервера</button>
+        <button type="button" name="config-import-apply" disabled>Применить</button>
+      </div>
+      <div class="form-group config-export">
+        <h6>Экспорт конфигурации</h6>
+        <button type="button" name="config-export-file">Экспорт в файл</button>
+        <button type="button" name="config-export-server">Экспорт на сервер</button>
+      </div>
+      <div class="form-group config-clear">
+        <h6>Сброс конфигурации</h6>
+        <button type="button" name="config-clear">Сброс конфигурации</button>
+      </div>
+      <div class="form-actions">
+        <button type="button" name="save">сохранить</button>
+        <button type="button" name="cancel">отмена</button>
+      </div>
+    </form>
+  </div>
+</div>

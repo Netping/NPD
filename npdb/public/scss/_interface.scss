@@ -1,0 +1,94 @@
+.dd {
+  height: 2em;
+  width: 2em;
+  position: relative;
+
+  &-button {
+    font-style: normal;
+    opacity: 0.5;
+    font-size: 1.4em;
+    transform: rotate(90deg);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: '•••';
+    }
+  }
+
+  &-menu {
+    position: absolute;
+    right: 100%;
+    top: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.7em 0 0.7em 0.7em;
+    box-shadow: 0 0 4px #222;
+    list-style: none;
+    padding: 0.5em 1em;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: 0.15s;
+    display: none;
+  }
+
+  &.opened ul {
+    opacity: 1;
+    pointer-events: all;
+    display: block;
+  }
+}
+
+.dd-fullbox {
+  .dd-button {
+    position: absolute;
+    z-index: 2;
+    right: 0.4em;
+    top: 0.5em;
+  }
+
+  .dd-menu {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: none;
+    border: 0;
+    background: #000a;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 0.7em 2em;
+
+    li {
+      a {
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.opened .dd-menu {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+#adddevice {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background: #c75;
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}

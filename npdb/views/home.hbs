@@ -1,0 +1,39 @@
+<div id="screen-wrapper">
+  <div id="screen">
+
+    <div class="controls">
+      <img src="img/logo.png" alt="">
+      <div class="form-item switcher locker unlocked">
+        <input type="checkbox" id="locker1" value="">
+        <label for="locker1"></label>
+      </div>
+      <div class="form-item button add">
+        <button type="button" name="add" data-target=".modal-device-add"></button>
+      </div>
+      <div class="form-item button refresh">
+        <button type="button" name="refresh"></button>
+      </div>
+      <div class="form-item button help">
+        <button type="button" name="help"></button>
+      </div>
+      <div class="form-item button settings">
+        <button type="button" name="settings" data-target="#modal-settings"></button>
+      </div>
+    </div>
+    <div class="workplace">
+      <div id="bg">
+        
+      </div>
+      <!-- <a href="#" data-action="clear-storage">REMOVE WIDS FROM STORAGE</a> -->
+    </div>
+
+  </div>
+
+  <div id="modals">
+    <div class="modal-overlay"></div>
+    {{> modal-device-add }}
+    {{> modal-device-remove }}
+    {{> modal-device-edit }}
+    {{> modal-settings }}
+  </div>
+</div>

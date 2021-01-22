@@ -1,0 +1,33 @@
+<form>
+  <div class="form-item">
+    <select name="nptype">
+      <option value="t">Термодатчик</option>
+    </select>
+  </div>
+  <div class="form-item">
+    <input type="text" name="npname" value="" placeholder="имя виджета">
+  </div>
+  <div class="form-item">
+    <input type="text" name="nphost" value="" placeholder="url пути к датчику" required>
+  </div>
+  <div class="form-item">
+    <input type="text" name="nplogin" value="" placeholder="логин">
+  </div>
+  <div class="form-item">
+    <input type="password" name="nppassword" value="" placeholder="пароль">
+  </div>
+  <div class="form-item">
+    <input type="text" name="npnumber" value="" placeholder="имя/номер датчика" required>
+  </div>
+  <div class="form-item">
+    <input type="number" name="npmin" value="" placeholder="минимальное значение" required>
+  </div>
+  <div class="form-item">
+    <input type="number" name="npmax" value="" placeholder="максимальное значение" required>
+  </div>
+  <div class="form-actions">
+    <button type="button" name="save">сохранить</button>
+    <button type="button" name="remove" data-target="#modal-device-remove">удалить</button>
+    <button type="button" name="cancel">отмена</button>
+  </div>
+</form>

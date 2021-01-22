@@ -1,0 +1,74 @@
+.device {
+  width: 185px;
+  height: 132px;
+  background: #fff;
+  box-shadow: 0 5px 10px 2px #0004;
+  margin: 0 2em 2em 0;
+  position: absolute;
+  font-weight: 300;
+
+  .theme2 & {
+    background: #202646;
+    color: #fff;
+  }
+
+  .data {
+    border-top: 3px solid #aaa;
+
+    .current {
+      font-size: 5em;
+      text-align: right;
+      line-height: 1.1;
+      padding-top: 0.2rem;
+      padding-right: 2.3rem;
+    }
+
+    .last {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 0 2.9rem 0 1rem;
+    }
+
+    i.id {
+      position: absolute;
+      right: 8px;
+      bottom: 0;
+      font-size: 0.7em;
+      opacity: 0.5;
+    }
+  }
+
+  .ok .data {
+    border-color: $green;
+  }
+
+  .low .data {
+    border-color: $blue;
+
+    .current {
+      color: $blue;
+    }
+  }
+
+  .high .data {
+    border-color: $red;
+
+    .current {
+      color: $red;
+    }
+  }
+
+  &.state {
+    &-ok {
+      border-color: $green;
+    }
+
+    &-hot {
+      border-color: $red;
+    }
+
+    &-cool {
+      border-color: $blue;
+    }
+  }
+}

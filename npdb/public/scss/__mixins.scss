@@ -1,0 +1,81 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+)
+!default;
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - 0.02, null);
+}
+// @include m-up(md) {....} => @media (min-width: 768px) {...}
+// @include m-up(700) {...} => @media (min-width: 700px) {...}
+@mixin m-up($value, $breakpoints: $grid-breakpoints) {
+  @if type-of($value) == number {
+    @media (min-width: '#{$value}px') {
+      @content;
+    }
+  } @else {
+    $min: breakpoint-min($value, $breakpoints);
+    @if $min {
+      @media (min-width: $min) {
+        @content;
+      }
+    } @else {
+      @content;
+    }
+  }
+}
+// @include m-down(lg) {.....} => @media (max-width: 1199px) {...}
+// @include m-down(1000) {...} => @media (max-width: 1000px) {...}
+@mixin m-down($value, $breakpoints: $grid-breakpoints) {
+  @if type-of($value) == number {
+    @media (max-width: '#{$value}px') {
+      @content;
+    }
+  } @else {
+    $max: breakpoint-max($value, $breakpoints);
+    @if $max {
+      @media (max-width: $max) {
+        @content;
+      }
+    } @else {
+      @content;
+    }
+  }
+}
+// @include m-between(sm,lg) {......} => @media (min-width: 768px) and (max-width: 1199px) {...}
+// @include m-between(500,lg) {.....} => @media (min-width: 500px) and (max-width: 1199px) {...}
+// @include m-between(700,1100) {...} => @media (min-width: 700px) and (max-width: 1100px) {...}
+@mixin m-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  @include m-up($lower, $breakpoints) {
+    @include m-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+// @include m-only(md) {...} => @media (min-width: 768px) and (max-width: 991) {...}
+@mixin m-only($name, $breakpoints: $grid-breakpoints) {
+  @include media-breakpoint-between($name, $name, $breakpoints) {
+    @content;
+  }
+}
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-name;
+    src: url('#{$path}/#{$font-name}.eot');
+    src: url('#{$path}/#{$font-name}.eot?#iefix') format("embedded-opentype"), url('#{$path}/#{$font-name}.woff') format("woff"), url('#{$path}/#{$font-name}.ttf') format("truetype"), url('#{$path}/#{$font-name}.svg##{$font-name}') format("svg");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

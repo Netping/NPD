@@ -1,0 +1,175 @@
+a,
+button {
+  outline: none;
+}
+
+.form-item {
+  margin-top: 0.5em;
+
+  input[type="password"],
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 0.5em 0.7em;
+    border-radius: 0.3em;
+    border: 1px solid #aaa;
+
+    &.error {
+      border-color: $red;
+    }
+  }
+}
+
+.form-actions {
+  margin-top: 1em;
+
+  button {
+    padding: 0.7em 1em;
+    border: 1px solid #191F40;
+    border-radius: 0.4em;
+
+    &[name="save"] {
+      background: #191F40;
+      color: #ddd;
+    }
+  }
+}
+
+.controls {
+  .form-item {
+    margin-top: 2.3em;
+
+    &.switcher {
+      input {
+        display: none;
+
+        &:checked {
+          & + label {
+            background: #191F40;
+
+            &:before {
+              left: calc(100% - 33px);
+              background-color: #fff;
+              background-position-x: -24px;
+            }
+          }
+        }
+      }
+
+      label {
+        position: relative;
+        width: 4.5em;
+        height: 36px;
+        background-color: #fff;
+        border: 1px solid #191F40;
+        display: block;
+        border-radius: 2em;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &::before {
+          content: '';
+          width: 32px;
+          height: 32px;
+          display: block;
+          background: #000 url('/img/icon-lock.png') 10px 7px no-repeat;
+          border-radius: 2em;
+          position: absolute;
+          left: 1px;
+          top: 1px;
+          transition: 0.2s;
+        }
+      }
+    }
+
+    &.refresh {
+      margin: auto;
+    }
+  }
+
+  button {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    border-radius: 2.5rem;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+      box-shadow: 0 0 3px;
+    }
+
+    &[name="settings"] {
+      background: url('/img/icon-settings.png') center no-repeat;
+    }
+
+    &[name="help"] {
+      background: url('/img/icon-help.png') center no-repeat;
+    }
+
+    &[name="refresh"] {
+      background: url('/img/icon-refresh.png') center no-repeat;
+    }
+
+    &[name="add"] {
+      background: url('/img/plus.svg') center / 22px no-repeat;
+    }
+  }
+}
+
+#modals {
+  .modal-settings {
+    [class*="bg"],
+    [class*="config-"] {
+      input[type="file"] {
+        display: none;
+      }
+
+      h6 {
+        margin-bottom: 0;
+        line-height: 1;
+        font-size: 0.9em;
+      }
+
+      button,
+      label {
+        width: 100%;
+        background: #eee;
+        border: 1px solid #ccc;
+        height: 1.7rem;
+        margin: 0.3rem 0 0;
+        display: block;
+        line-height: 1.7rem;
+        font-size: 0.8em;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .form-group {
+    margin-bottom: 0.6em;
+  }
+
+  .form-item {
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+
+    button {
+      width: 100%;
+      background: #eee;
+      border: 1px solid #ccc;
+      height: 1.7rem;
+      margin: 0.3rem 0 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

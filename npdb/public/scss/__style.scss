@@ -1,0 +1,157 @@
+// normal
+
+* {
+  box-sizing: border-box;
+}
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+$font-family-main: 'Roboto', Helvetica, Arial, sans-serif;
+/* EXTRA COLORS */
+$headers: (
+  (h1, 1.30rem, 1.20, 700),
+  (h2, 2.00rem, 1.20, 400),
+  (h3, 1.75rem, 1.20, 400),
+  (h4, 1.50rem, 1.20, 400),
+  (h5, 1.25rem, 1.20, 400),
+  (h6, 1.00rem, 1.20, 400),
+);
+@each $h in $headers {
+  #{nth($h, 1)} {
+    font-size: #{nth($h,2)};
+    line-height: #{nth($h,3)};
+    font-weight: #{nth($h,4)};
+    font-family: $font-family-main;
+    margin: 0 0 0.5em;
+  }
+}
+
+button {
+  cursor: pointer;
+
+  &[disabled] {
+    cursor: default;
+  }
+}
+/* ELEMENTS */
+// a {
+//   color: $color-link;
+//   transition: all 0.3s;
+//
+//   .main-menu & {
+//     color: $color-link-menu;
+//
+//     &:hover {
+//       color: $color-link-menu-hover;
+//     }
+//   }
+//
+//   &:hover {
+//     color: $color-link-hover;
+//     text-decoration: none;
+//   }
+//
+//   &:focus {
+//     outline: none !important;
+//   }
+// }
+//
+// b,
+// strong {
+//   font-weight: 600;
+// }
+//
+// blockquote {
+//   padding: 0.5rem 1rem;
+//   margin-bottom: 1rem;
+//   font-size: 1.25rem;
+//   border-left: 0.25rem solid #eceeef;
+// }
+//
+// button:focus {
+//   outline: none !important;
+// }
+//
+// img {
+//   max-width: 100%;
+//   height: auto;
+// }
+//
+// p {
+//   &:last-child {
+//     margin-bottom: 0;
+//   }
+// }
+//
+// table {
+//   width: 100%;
+//   max-width: 100%;
+//   margin-bottom: 1rem;
+//
+//   .field--name-body & {
+//     font-size: 0.85em;
+//     // responsive hack
+//     display: block;
+//     width: 100%;
+//     overflow-x: auto;
+//
+//     tbody {
+//       display: block;
+//       width: 100%;
+//     }
+//   }
+//
+//   td,
+//   th {
+//     padding: 0.75rem;
+//     line-height: 1.5;
+//     vertical-align: top;
+//     border-top: 1px solid #eceeef;
+//   }
+//
+//   thead {
+//     th {
+//       vertical-align: bottom;
+//       border-bottom: 2px solid #eceeef;
+//     }
+//   }
+//
+//   tbody {
+//     tr {
+//       &:nth-of-type(odd) {
+//         background-color: #f9f9f9;
+//       }
+//     }
+//
+//     & + tbody {
+//       border-top: 2px solid #eceeef;
+//     }
+//   }
+// }
+//
+// [class*="btn-"] {
+//   @extend .btn;
+// }
+//
+// .btn {
+//   border: none;
+//   padding: 0.8em 1.2em;
+//   // letter-spacing: 0.7px;
+//   font-size: 0.8em;
+//   font-weight: 600;
+//   transition: 0.2s;
+//   color: #fff;
+//   background: $blue;
+//   font-weight: 400;
+//   border-radius: 0.2rem;
+//   margin: 0;
+//
+//   &:hover {
+//     background-color: $blue-hover;
+//     color: #fff;
+//   }
+//
+//   &:active,
+//   &:focus {
+//     outline: none;
+//   }
+// }

@@ -1,0 +1,33 @@
+[class*="modal-"] {
+  @extend .modal;
+}
+
+.modal {
+  &.show {
+    display: block;
+  }
+
+  &-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff5;
+    display: none;
+    z-index: 1;
+  }
+
+  &-wrapper {
+    background: #fff;
+    padding: 1.6em;
+    box-shadow: 0 1em 2em #ccc;
+    z-index: 2;
+    position: absolute;
+    width: 310px;
+    left: calc(50% - 150px);
+    top: 200px;
+    max-height: 800px;
+    display: none;
+  }
+}
