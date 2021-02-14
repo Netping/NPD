@@ -1,1 +1,0 @@
-electron-packager . npdb --platform=win32 --electron-version=11.1.1 --app-version=0.1.0 --out=dist --ignore=dist --prune --overwrite
