@@ -1,1 +1,15 @@
-test
+Build instruction (https://docs.google.com/document/d/1ijxcsu9P8wVPW6XwhrCNtBLTjTA8lyfawIeLT60nTM0/edit#)
+
+Исходные условия: чистая ОС Windows 10
+1. Установить NodeJS https://nodejs.org/en/download/ (В процессе поставить галку “automatically install necessary”)
+2. Открыть powershell от имени администратора
+3. Поменять политику запуска скриптов - Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+4. перейти в каталог npdb
+5. выполнить npm install
+6. Установить Electron Packager командой npm install electron-packager -g
+7. Выполнить команду electron-packager . npdb --platform=”win32,linux” --electron-version=11.2.0 --app-version=0.1.0 --out=dist --ignore=dist --no-prune --overwrite
+После этого в каталоге dist появятся каталоги для linux и windows.
+8. В каждый из них нужно скопировать в каталог ./resources/app/node_modules с заменой каталог ./node_modules/handlebars
+
+В каталогах теперь полностью готовое к запуску приложение. Запуск производится файлом ./npdb.exe для windows или ./npdb для Linux
+Клиентская часть после запуска доступна по адресу localhost:3000 из браузера Chrome последней версии
